@@ -115,10 +115,3 @@ print("Prob W > 40: " + str(count_40 / TRIAL_COUNT))
 print("Prob W > 50: " + str(count_50 / TRIAL_COUNT))
 print("Prob W > 60: " + str(count_60 / TRIAL_COUNT))
 print("Prob W > 65: " + str(count_65 / TRIAL_COUNT))
-
-
-
-
-
-
-
