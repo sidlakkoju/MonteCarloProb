@@ -6,14 +6,23 @@ K = 2**17
 kay=2**17
 n=1000
 xValues = [1000]
+
+
+# Find first 1000 values of monte carlo as x
 for y in range(1,kay+1):
   xValues.append((a*xValues[y-1]+c)%K)
+
+# Find first 1000 U values
 uValues = []
 for x in xValues:
   uValues.append(x/float(K))
+
+
 xDist=[]
 for u in uValues:
   xDist.append(-12*math.log(1-u))
+
+
 w=[]
 for i in range(n)
   j=0
