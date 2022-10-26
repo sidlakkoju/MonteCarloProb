@@ -9,8 +9,8 @@ import randomValueGen as rvg
 
 # First three Monte Carlo Numbers
 print("Random Number 1: " + str(rvg.randNumStart(1)))
-print("Random Number 2: " + str(rvg.randNumStart(1)))
-print("Random Number 3: " + str(rvg.randNumStart(1)))
+print("Random Number 2: " + str(rvg.randNumStart(2)))
+print("Random Number 3: " + str(rvg.randNumStart(3)))
 print("")
 
 # Random Numbers 51, 52, 53
