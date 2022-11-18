@@ -1,2 +1,2 @@
 # MonteCarloProb
-Probability Project
+School Probability Project
