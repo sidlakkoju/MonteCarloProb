@@ -5,6 +5,12 @@ import numpy as np
 import randomValueGen as rvg
 
 
+# importing the libraries
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+
 #-------------- RANDOM VALUE GENERATOR TESTING --------------#
 
 # First three Monte Carlo Numbers
@@ -88,8 +94,8 @@ count_30 = 0
 count_40 = 0
 
 count_50 = 0
-count_60 = 0
-count_65 = 0
+count_100 = 0
+count_120 = 0
 
 for w in wValues:
     if w <= 15:
@@ -102,10 +108,10 @@ for w in wValues:
         count_40 += 1
     if w > 50:
         count_50 += 1
-    if w > 60:
-        count_60 += 1
-    if w > 65:
-        count_65 += 1
+    if w > 100:
+        count_100 += 1
+    if w > 120:
+        count_120 += 1
 
 
 print("Prob W <= 15: " + str(count_15 / TRIAL_COUNT))
@@ -113,5 +119,16 @@ print("Prob W <= 20: " + str(count_20 / TRIAL_COUNT))
 print("Prob W <= 30: " + str(count_30 / TRIAL_COUNT))
 print("Prob W > 40: " + str(count_40 / TRIAL_COUNT))
 print("Prob W > 50: " + str(count_50 / TRIAL_COUNT))
-print("Prob W > 60: " + str(count_60 / TRIAL_COUNT))
-print("Prob W > 65: " + str(count_65 / TRIAL_COUNT))
+print("Prob W > 100: " + str(count_100 / TRIAL_COUNT))
+print("Prob W > 120: " + str(count_120 / TRIAL_COUNT))
+
+
+
+df = pd.DataFrame (wValues, columns = ['wValues'])
+sns.displot(df['wValues'], kde = True)
+plt.show()
+
+
+
+sns.displot(df['wValues'], kind = 'ecdf')
+plt.show()

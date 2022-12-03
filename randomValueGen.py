@@ -1,10 +1,10 @@
 import sys
-sys.setrecursionlimit(1500)
+sys.setrecursionlimit(1000)
 
 # Monte Carlo Random Generator
 a = 24693
-c = 3517
-K = 2**17
+c = 3967
+K = 2**18
 
 def randNumStart(final):
     x0 = 1000
@@ -19,16 +19,30 @@ def randNumRec(cur, final, x):
 
 
 
-'''
-# First three Monte Carlo Numbers
-print("Random Number 1: " + str(randNumStart(1)))
-print("Random Number 2: " + str(randNumStart(1)))
-print("Random Number 3: " + str(randNumStart(1)))
-print("")
+class randNumGenerator :
+    def __init__(self):
+        self.a = 24693
+        self.c = 3967
+        self.K = 2**18
+        self.x0 = 1000
+        self.final = 1
+        self.cur = 0
+    
+    def getRandNum(self):
+        self.cur += 1
 
-# Random Numbers 51, 52, 53
-print("Random Number 51: " + str(randNumStart(51)))
-print("Random Number 52: " + str(randNumStart(52)))
-print("Random Number 53: " + str(randNumStart(53)))
-print("")
-'''
+        self.x0 = (self.a*self.x0 + self.c)%self.K
+
+        #if self.cur >= self.final:
+        return self.x0/self.K
+        
+        
+            
+        
+
+
+
+gen = randNumGenerator()
+print(gen.getRandNum())
+print(gen.getRandNum())
+print(gen.getRandNum())
